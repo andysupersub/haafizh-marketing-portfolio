@@ -829,11 +829,15 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 80px;
-      align-items: start;
+      align-items: center;
     }
 
-    /* LEFT — form side */
-    .contact-form-side {}
+    /* LEFT — headline side */
+    .contact-headline-side {
+      display: flex; flex-direction: column;
+      align-items: flex-start; text-align: left;
+      padding-top: 8px;
+    }
 
     .contact-eyebrow {
       font-size: 11px; font-weight: 600; letter-spacing: 0.2em;
@@ -841,68 +845,12 @@
       margin-bottom: 32px;
     }
 
-    .contact-form { display: flex; flex-direction: column; gap: 16px; }
-
-    .contact-form input,
-    .contact-form select,
-    .contact-form textarea {
-      width: 100%;
-      background: #111;
-      border: 1px solid #222;
-      border-radius: 12px;
-      padding: 16px 20px;
-      font-family: 'Inter', sans-serif;
-      font-size: 15px;
-      font-weight: 400;
-      color: var(--white);
-      letter-spacing: var(--ls-normal);
-      outline: none;
-      transition: border-color .2s;
-      -webkit-appearance: none;
-    }
-    .contact-form input::placeholder,
-    .contact-form textarea::placeholder { color: #444; }
-    .contact-form input:focus,
-    .contact-form select:focus,
-    .contact-form textarea:focus { border-color: #444; }
-
-    .contact-form select { color: #444; cursor: pointer; }
-    .contact-form select.filled { color: var(--white); }
-    .contact-form select option { background: #111; color: var(--white); }
-
-    .contact-form textarea { resize: none; height: 120px; line-height: 1.6; }
-
-    .contact-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-
-    .contact-submit {
-      display: inline-flex; align-items: center; gap: 12px;
-      padding: 16px 28px;
-      background: #CCFF00;
-      color: #000;
-      font-family: 'Inter', sans-serif;
-      font-size: 16px; font-weight: 700;
-      letter-spacing: -0.02em;
-      border: none; border-radius: 100px;
-      cursor: pointer;
-      transition: transform .2s, background .2s;
-      width: fit-content;
-      margin-top: 4px;
-    }
-    .contact-submit:hover { transform: scale(1.04); background: #d4ff1a; }
-
-    /* RIGHT — headline side */
-    .contact-headline-side {
-      display: flex; flex-direction: column;
-      align-items: flex-end; text-align: right;
-      padding-top: 8px;
-    }
-
     .contact-headline {
       font-family: 'Inter', sans-serif;
-      font-size: 32px;
+      font-size: 60px;
       font-weight: 500;
       letter-spacing: -0.09em;
-      line-height: 1.15;
+      line-height: 1.1;
       color: var(--white);
       margin-bottom: 48px;
     }
@@ -919,13 +867,84 @@
     }
     .contact-email:hover { border-color: var(--white); }
 
-    .socials { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; justify-content: flex-end; }
+    .socials { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
     .socials a {
       font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
       text-transform: uppercase; color: #444;
       text-decoration: none; transition: color .2s;
     }
     .socials a:hover { color: var(--white); }
+
+    /* RIGHT — form side */
+    .contact-form-side {}
+
+    .contact-form { display: flex; flex-direction: column; gap: 14px; }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      background: var(--white);
+      border: none;
+      border-radius: 100px;
+      padding: 16px 24px;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--black);
+      letter-spacing: var(--ls-normal);
+      outline: none;
+      transition: box-shadow .2s;
+      -webkit-appearance: none;
+    }
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder { color: #aaa; }
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus { box-shadow: 0 0 0 2px #CCFF00; }
+
+    .contact-form select { color: #aaa; cursor: pointer; }
+    .contact-form select.filled { color: var(--black); }
+    .contact-form select option { background: #fff; color: var(--black); }
+
+    .contact-form textarea {
+      resize: none; height: 120px;
+      line-height: 1.6;
+      border-radius: 28px;
+    }
+
+    .contact-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+    .contact-submit {
+      display: inline-flex; align-items: center;
+      gap: 0;
+      padding: 14px 14px 14px 28px;
+      background: #CCFF00;
+      color: var(--black);
+      font-family: 'Inter', sans-serif;
+      font-size: 17px; font-weight: 700;
+      letter-spacing: -0.01em;
+      border: none; border-radius: 100px;
+      cursor: pointer;
+      transition: background .2s, transform .15s;
+      width: fit-content;
+      margin-top: 4px;
+      text-decoration: none;
+    }
+    .contact-submit:hover { background: #d4ff1a; transform: scale(1.03); }
+    .contact-submit-icon {
+      display: flex; align-items: center; justify-content: center;
+      width: 38px; height: 38px;
+      background: var(--black);
+      border-radius: 50%;
+      margin-left: 16px;
+      flex-shrink: 0;
+      transition: transform .2s;
+    }
+    .contact-submit:hover .contact-submit-icon { transform: rotate(45deg); }
+    .contact-submit-icon svg {
+      width: 16px; height: 16px; color: #CCFF00;
+    }
 
     /* ─────────────────────────────────────────────
        FOOTER
@@ -1413,9 +1432,25 @@
   <!-- ══════════════ CONTACT ══════════════ -->
   <section id="contact">
 
-    <!-- LEFT: Form -->
-    <div class="contact-form-side">
+    <!-- LEFT: Headline + email + socials -->
+    <div class="contact-headline-side">
       <div class="contact-eyebrow">Let's Work Together</div>
+      <h2 class="contact-headline reveal">
+        Ready to build your one<br>marketing system<br>with AI automation?<br><span class="hl-accent">Let's talk!</span>
+      </h2>
+      <a href="mailto:haafizhdfw13@gmail.com" class="contact-email">
+        haafizhdfw13@gmail.com
+      </a>
+      <ul class="socials">
+        <li><a href="https://www.instagram.com/haafizhdfw/" target="_blank">Instagram</a></li>
+        <li><a href="#" target="_blank">Behance</a></li>
+        <li><a href="https://www.linkedin.com/in/haafizhdfw/" target="_blank">LinkedIn</a></li>
+        <li><a href="https://www.tiktok.com/@haafizhdfw" target="_blank">TikTok</a></li>
+      </ul>
+    </div>
+
+    <!-- RIGHT: Form -->
+    <div class="contact-form-side">
       <form class="contact-form" onsubmit="handleFormSubmit(event)">
         <div class="contact-form-row">
           <input type="text" placeholder="Full Name" required />
@@ -1433,25 +1468,14 @@
         </select>
         <textarea placeholder="Tell me about your project..."></textarea>
         <button type="submit" class="contact-submit">
-          Let's Build →
+          Let's Build
+          <span class="contact-submit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
+            </svg>
+          </span>
         </button>
       </form>
-    </div>
-
-    <!-- RIGHT: Headline + email + socials -->
-    <div class="contact-headline-side">
-      <h2 class="contact-headline reveal">
-        Ready to build your one<br>marketing system with<br>AI automation?<br><span class="hl-accent">Let's talk!</span>
-      </h2>
-      <a href="mailto:haafizhdfw13@gmail.com" class="contact-email">
-        haafizhdfw13@gmail.com
-      </a>
-      <ul class="socials">
-        <li><a href="https://www.instagram.com/haafizhdfw/" target="_blank">Instagram</a></li>
-        <li><a href="#" target="_blank">Behance</a></li>
-        <li><a href="https://www.linkedin.com/in/haafizhdfw/" target="_blank">LinkedIn</a></li>
-        <li><a href="https://www.tiktok.com/@haafizhdfw" target="_blank">TikTok</a></li>
-      </ul>
     </div>
 
   </section>
