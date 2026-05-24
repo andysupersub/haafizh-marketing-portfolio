@@ -825,35 +825,103 @@
     #contact {
       padding: 100px 48px;
       border-top: 1px solid var(--line);
-      display: flex; flex-direction: column; align-items: center;
-      text-align: center;
       background: var(--black); color: var(--white);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
     }
+
+    /* LEFT — form side */
+    .contact-form-side {}
+
     .contact-eyebrow {
       font-size: 11px; font-weight: 600; letter-spacing: 0.2em;
       text-transform: uppercase; color: #555;
-      margin-bottom: 28px;
+      margin-bottom: 32px;
     }
+
+    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 12px;
+      padding: 16px 20px;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--white);
+      letter-spacing: var(--ls-normal);
+      outline: none;
+      transition: border-color .2s;
+      -webkit-appearance: none;
+    }
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder { color: #444; }
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus { border-color: #444; }
+
+    .contact-form select { color: #444; cursor: pointer; }
+    .contact-form select.filled { color: var(--white); }
+    .contact-form select option { background: #111; color: var(--white); }
+
+    .contact-form textarea { resize: none; height: 120px; line-height: 1.6; }
+
+    .contact-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .contact-submit {
+      display: inline-flex; align-items: center; gap: 12px;
+      padding: 16px 28px;
+      background: #CCFF00;
+      color: #000;
+      font-family: 'Inter', sans-serif;
+      font-size: 16px; font-weight: 700;
+      letter-spacing: -0.02em;
+      border: none; border-radius: 100px;
+      cursor: pointer;
+      transition: transform .2s, background .2s;
+      width: fit-content;
+      margin-top: 4px;
+    }
+    .contact-submit:hover { transform: scale(1.04); background: #d4ff1a; }
+
+    /* RIGHT — headline side */
+    .contact-headline-side {
+      display: flex; flex-direction: column;
+      align-items: flex-end; text-align: right;
+      padding-top: 8px;
+    }
+
     .contact-headline {
-      font-size: clamp(44px, 7vw, 88px);
-      font-weight: 900; letter-spacing: var(--ls-tight);
-      line-height: 0.92; color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 32px;
+      font-weight: 500;
+      letter-spacing: -0.09em;
+      line-height: 1.15;
+      color: var(--white);
       margin-bottom: 48px;
     }
-    .contact-headline span { color: #333; }
+    .contact-headline .hl-accent { color: #CCFF00; }
+
     .contact-email {
       display: inline-block;
-      font-size: clamp(16px, 2vw, 24px);
+      font-size: clamp(14px, 1.5vw, 18px);
       font-weight: 500; letter-spacing: var(--ls-normal);
       color: var(--white); text-decoration: none;
       border-bottom: 1px solid #333;
-      padding-bottom: 4px; margin-bottom: 56px;
-      transition: border-color .2s, color .2s;
+      padding-bottom: 4px; margin-bottom: 40px;
+      transition: border-color .2s;
     }
     .contact-email:hover { border-color: var(--white); }
-    .socials { display: flex; gap: 32px; list-style: none; }
+
+    .socials { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; justify-content: flex-end; }
     .socials a {
-      font-size: 12px; font-weight: 600; letter-spacing: 0.12em;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
       text-transform: uppercase; color: #444;
       text-decoration: none; transition: color .2s;
     }
@@ -1344,19 +1412,48 @@
 
   <!-- ══════════════ CONTACT ══════════════ -->
   <section id="contact">
-    <div class="contact-eyebrow">Let's Work Together</div>
-    <h2 class="contact-headline reveal">
-      Got a project?<br /><span>Let's talk.</span>
-    </h2>
-    <a href="mailto:haafizhdfw13@gmail.com" class="contact-email">
-      haafizhdfw13@gmail.com
-    </a>
-    <ul class="socials">
-      <li><a href="https://www.instagram.com/haafizhdfw/" target="_blank">Instagram</a></li>
-      <li><a href="#" target="_blank">Behance</a></li>
-      <li><a href="https://www.linkedin.com/in/haafizhdfw/" target="_blank">LinkedIn</a></li>
-      <li><a href="https://www.tiktok.com/@haafizhdfw" target="_blank">TikTok</a></li>
-    </ul>
+
+    <!-- LEFT: Form -->
+    <div class="contact-form-side">
+      <div class="contact-eyebrow">Let's Work Together</div>
+      <form class="contact-form" onsubmit="handleFormSubmit(event)">
+        <div class="contact-form-row">
+          <input type="text" placeholder="Full Name" required />
+          <input type="email" placeholder="Email Address" required />
+        </div>
+        <input type="text" placeholder="Business / Brand Name" />
+        <select id="contactService" onchange="this.classList.add('filled')">
+          <option value="" disabled selected>What do you need?</option>
+          <option>Social Media Management</option>
+          <option>Paid Ads (Meta / Google)</option>
+          <option>SEO & Landing Page Optimization</option>
+          <option>CRM & AI Automation</option>
+          <option>Full-Stack Marketing System</option>
+          <option>Other</option>
+        </select>
+        <textarea placeholder="Tell me about your project..."></textarea>
+        <button type="submit" class="contact-submit">
+          Let's Build →
+        </button>
+      </form>
+    </div>
+
+    <!-- RIGHT: Headline + email + socials -->
+    <div class="contact-headline-side">
+      <h2 class="contact-headline reveal">
+        Ready to build your one<br>marketing system with<br>AI automation?<br><span class="hl-accent">Let's talk!</span>
+      </h2>
+      <a href="mailto:haafizhdfw13@gmail.com" class="contact-email">
+        haafizhdfw13@gmail.com
+      </a>
+      <ul class="socials">
+        <li><a href="https://www.instagram.com/haafizhdfw/" target="_blank">Instagram</a></li>
+        <li><a href="#" target="_blank">Behance</a></li>
+        <li><a href="https://www.linkedin.com/in/haafizhdfw/" target="_blank">LinkedIn</a></li>
+        <li><a href="https://www.tiktok.com/@haafizhdfw" target="_blank">TikTok</a></li>
+      </ul>
+    </div>
+
   </section>
 
   <!-- ══════════════ FOOTER ══════════════ -->
@@ -1368,6 +1465,15 @@
 
   <!-- ══════════════ JS ══════════════ -->
   <script>
+    /* Form submit */
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('.contact-submit');
+      btn.textContent = 'Sent! ✓';
+      btn.style.background = '#00ff88';
+      setTimeout(() => { btn.textContent = "Let's Build →"; btn.style.background = '#CCFF00'; e.target.reset(); document.getElementById('contactService').classList.remove('filled'); }, 3000);
+    }
+
     /* Cursor */
     const dot = document.getElementById('curDot');
     const ring = document.getElementById('curRing');
