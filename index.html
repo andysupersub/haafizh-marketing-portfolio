@@ -980,29 +980,268 @@
     /* ─────────────────────────────────────────────
        RESPONSIVE
     ───────────────────────────────────────────── */
+    /* ═══════════════════════════════════════════
+       RESPONSIVE — Tablet (max 900px)
+    ═══════════════════════════════════════════ */
     @media (max-width: 900px) {
-      nav { padding: 0 24px; }
+      nav { padding: 0 24px; height: 72px; }
       .nav-center { display: none; }
       .nav-email { display: none; }
 
-      #hero { min-height: 100svh; }
+      #hero { min-height: 100svh; padding-top: 72px; }
       .hero-name-block { left: 24px; transform: translateY(-55%); }
       .hero-photo { height: 55vh; }
       .hero-tagline { left: 24px; bottom: 90px; font-size: 15px; }
       .hero-copyright { right: 24px; bottom: 90px; }
 
-      .stats-bar { flex-wrap: wrap; }
-      .stat-item { min-width: 50%; flex: none; }
-
       #about { grid-template-columns: 1fr; padding: 80px 24px; }
-      .about-card-outer { max-width: 380px; position: static; }
+      .about-card-outer { max-width: 420px; position: static; margin-top: 0; }
       #logos { padding: 40px 0; }
       .logos-label { padding: 0 24px; }
       .projects-head { padding: 0 24px; flex-direction: column; align-items: flex-start; gap: 12px; }
-      .projects-desc { text-align: left; }
+      .projects-desc { text-align: left; max-width: 100%; }
       .proj-inner { padding: 28px 24px; }
       #contact { padding: 80px 24px; }
       footer { padding: 20px 24px; flex-direction: column; gap: 8px; text-align: center; }
+    }
+
+    /* ═══════════════════════════════════════════
+       MOBILE — iPhone SE (375px) to iPhone 17 Pro Max (430px+)
+    ═══════════════════════════════════════════ */
+    @media (max-width: 600px) {
+
+      /* ── NAV ── */
+      nav {
+        padding: 0 20px;
+        height: 64px;
+      }
+      .nav-logo img { height: 44px; }
+      .nav-btn {
+        font-size: 14px;
+        padding: 7px 7px 7px 18px;
+      }
+      .nav-btn-icon {
+        width: 32px; height: 32px;
+        margin-left: 10px;
+      }
+      .nav-btn-icon svg { width: 14px; height: 14px; }
+
+      /* ── CURSOR — hide on touch ── */
+      .cur-dot, .cur-ring { display: none; }
+      body { cursor: auto; }
+
+      /* ── HERO ── */
+      #hero {
+        padding-top: 64px;
+        min-height: 100svh;
+      }
+      .hero-name-block {
+        left: 20px;
+        top: 48%;
+        transform: translateY(-50%);
+      }
+      .hero-name {
+        font-size: clamp(72px, 22vw, 110px);
+        letter-spacing: -0.07em;
+      }
+      .hero-subtitle {
+        font-size: clamp(28px, 9vw, 44px);
+        margin-top: 8px;
+      }
+      .hero-photo {
+        height: 52vh;
+        right: -20px;
+      }
+      .hero-tagline {
+        left: 20px;
+        bottom: 24px;
+        font-size: 13px;
+        max-width: 65vw;
+        line-height: 1.5;
+      }
+      .hero-copyright {
+        right: 20px;
+        bottom: 24px;
+      }
+      .hero-year { font-size: 18px; }
+      .hero-year-desc { font-size: 11px; max-width: 140px; }
+
+      /* ── STATS BAR ── */
+      .stats-bar { padding: 28px 0; }
+      .stat-item { font-size: 26px; gap: 5px; }
+      .stat-n { font-size: 26px; }
+      .stat-l { font-size: 26px; }
+      .stat-bullet { width: 14px; height: 14px; }
+
+      /* ── ABOUT ── */
+      #about {
+        grid-template-columns: 1fr;
+        padding: 56px 20px;
+        gap: 48px;
+      }
+      .available-tag { font-size: 22px; margin-bottom: 20px; }
+      .about-hi {
+        font-size: clamp(34px, 10vw, 48px);
+        letter-spacing: -0.07em;
+        margin-bottom: 28px;
+      }
+      .fun-fact-label {
+        font-size: 20px;
+        padding: 5px 20px 8px;
+        margin-bottom: 16px;
+      }
+      .about-bio {
+        font-size: 14px;
+        line-height: 1.7;
+      }
+
+      /* Lanyard card */
+      .about-card-outer {
+        position: static;
+        margin-top: 0;
+        width: 100%;
+        max-width: 100%;
+        align-items: center;
+      }
+      .lanyard-strap { width: 22px; height: 40px; }
+      .about-card { border-radius: 24px; }
+      .about-card-header {
+        padding: 44px 24px 20px;
+        gap: 16px;
+      }
+      .about-card-photo { width: 90px; height: 90px; }
+      .about-card-name { font-size: 22px; }
+      .about-card-role { font-size: 13px; }
+      .about-card-socials a { width: 36px; height: 36px; }
+      .about-card-body { padding: 16px 24px 24px; }
+      .about-card-services-list li { font-size: 14px; padding: 12px 0; }
+
+      /* ── LOGOS ── */
+      #logos { padding: 32px 0; }
+      .logos-label {
+        font-size: 11px;
+        padding: 0 20px;
+        margin-bottom: 20px;
+      }
+      .logo-img { height: 28px; }
+      .logos-inner { gap: 48px; }
+
+      /* ── PROJECTS ── */
+      #projects { padding: 56px 0 0; }
+      .projects-head {
+        padding: 0 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 40px;
+      }
+      .projects-title {
+        font-size: clamp(72px, 22vw, 130px);
+        letter-spacing: -0.09em;
+      }
+      .projects-desc {
+        font-size: 16px;
+        max-width: 100%;
+        text-align: left;
+      }
+
+      /* Category labels */
+      .proj-category-label {
+        padding: 20px 20px;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .cat-num { font-size: 13px; }
+      .cat-name { font-size: 20px; }
+      .cat-desc { font-size: 13px; margin-left: 0; width: 100%; }
+
+      /* Project cards */
+      .proj-row { height: 200px; }
+      .proj-row.with-img { height: 280px; }
+      .proj-featured { height: 320px !important; }
+      .proj-inner { padding: 20px 20px; }
+      .proj-name { font-size: clamp(22px, 7vw, 36px); }
+      .proj-cat { font-size: 10px; letter-spacing: 0.08em; }
+      .proj-num { font-size: 10px; }
+      .proj-year { font-size: 11px; }
+      .proj-arrow { width: 36px; height: 36px; font-size: 14px; }
+      .proj-tagline { font-size: 12px; max-width: 90%; }
+
+      /* Metrics chips */
+      .proj-metrics {
+        top: 16px; right: 16px;
+        gap: 6px; max-width: 260px;
+      }
+      .metric-chip { font-size: 9px; padding: 4px 10px; }
+
+      /* ── CONTACT ── */
+      #contact {
+        grid-template-columns: 1fr;
+        padding: 56px 20px;
+        gap: 48px;
+      }
+      .contact-headline-side {
+        align-items: flex-start;
+        text-align: left;
+      }
+      .contact-headline {
+        font-size: clamp(36px, 11vw, 52px);
+        letter-spacing: -0.07em;
+        margin-bottom: 28px;
+      }
+      .contact-eyebrow { margin-bottom: 20px; }
+      .contact-email { font-size: 14px; margin-bottom: 28px; }
+      .socials { gap: 20px; justify-content: flex-start; }
+
+      .contact-form { gap: 12px; }
+      .contact-form-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .contact-form input,
+      .contact-form select,
+      .contact-form textarea {
+        font-size: 16px; /* prevents iOS zoom on focus */
+        padding: 14px 20px;
+        border-radius: 100px;
+      }
+      .contact-form textarea {
+        border-radius: 20px;
+        height: 100px;
+      }
+      .contact-submit {
+        font-size: 16px;
+        padding: 12px 12px 12px 24px;
+        width: 100%;
+        justify-content: space-between;
+      }
+      .contact-submit-icon { width: 34px; height: 34px; }
+
+      /* ── FOOTER ── */
+      footer {
+        padding: 20px;
+        flex-direction: column;
+        gap: 6px;
+        text-align: center;
+      }
+      footer p { font-size: 11px; }
+    }
+
+    /* ═══════════════════════════════════════════
+       MOBILE XS — iPhone SE (375px and below)
+    ═══════════════════════════════════════════ */
+    @media (max-width: 390px) {
+      .hero-name {
+        font-size: clamp(64px, 20vw, 90px);
+      }
+      .hero-subtitle { font-size: clamp(24px, 8vw, 36px); }
+      .hero-photo { height: 46vh; }
+      .about-hi { font-size: clamp(30px, 9.5vw, 42px); }
+      .projects-title { font-size: clamp(64px, 20vw, 110px); }
+      .contact-headline { font-size: clamp(32px, 10vw, 46px); }
+      .proj-row { height: 180px; }
+      .proj-row.with-img { height: 240px; }
+      .proj-featured { height: 280px !important; }
     }
   </style>
 </head>
