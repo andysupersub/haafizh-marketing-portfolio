@@ -450,6 +450,35 @@
     }
     .insight.blue-accent .insight-label { color: var(--blue); }
 
+    .insight.dark {
+      background: #222222;
+      border-left: none;
+      border-radius: 16px;
+      padding: 32px 36px;
+    }
+    .insight.dark .insight-label { color: #CCFF00; }
+    .insight.dark .insight-text {
+      font-size: 25px;
+      color: rgba(255,255,255,.85);
+      line-height: 1.4;
+      letter-spacing: -0.03em;
+    }
+
+    /* ─── 2-col chapter header ─── */
+    .ch-header-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+      margin-bottom: 40px;
+    }
+    .ch-header-2col .ch-title { margin-bottom: 0; }
+    .ch-header-2col .ch-lead {
+      font-size: 15px;
+      margin-bottom: 0;
+      padding-top: 8px;
+    }
+
     /* ─────────────────────────────────────────────
        CAMPAIGN TABLE
     ───────────────────────────────────────────── */
@@ -1032,15 +1061,17 @@
           <span class="ch-num">02</span>
           <span class="ch-tag">Strategy</span>
         </div>
-        <h2 class="ch-title">Not views.<br><em>The right views.</em></h2>
-        <p class="ch-lead">
-          The goal was never to go viral. It was to build a content system where every post, every ad, and every landing page serves a specific role in the funnel — and the data tells us exactly which role is working.
-        </p>
+        <div class="ch-header-2col">
+          <h2 class="ch-title">Not more views.<br><em>The right views.</em></h2>
+          <p class="ch-lead">
+            The goal was never to go viral. It was to build a content system where every post, every ad, and every landing page serves a specific role in the funnel and the data tells us exactly which role is working.
+          </p>
+        </div>
 
-        <div class="insight">
+        <div class="insight dark">
           <div class="insight-label">The Philosophy</div>
           <div class="insight-text">
-            "1 million views from the wrong audience gives you 10 buyers. 10,000 views from the right people gives you 50. We optimize for the second scenario — every time."
+            "1 million views from the wrong audience gives you 10 buyers. 10,000 views from the right people gives you 50. We optimize for the second scenario, every time."
           </div>
         </div>
 
