@@ -802,22 +802,14 @@
        IMPACT SUMMARY
     ───────────────────────────────────────────── */
     .impact-hero {
-      background: var(--black);
+      background: #222222;
       border-radius: 24px;
       padding: 56px;
       margin-bottom: 48px;
       position: relative;
       overflow: hidden;
     }
-    .impact-hero::before {
-      content: 'SUPERSUB';
-      position: absolute;
-      right: -20px; bottom: -30px;
-      font-size: 160px; font-weight: 900;
-      letter-spacing: var(--ls-tight);
-      color: rgba(255,255,255,.04);
-      line-height: 1; pointer-events: none;
-    }
+    .impact-hero::before, .impact-hero::after { display: none; content: none; }
     .impact-title {
       font-size: clamp(28px, 3vw, 44px);
       font-weight: 900;
@@ -843,20 +835,20 @@
       margin-bottom: 48px;
     }
     .pillar-card {
-      background: var(--white);
-      border: 1px solid var(--line);
+      background: #222222;
+      border: none;
       border-radius: 16px;
       padding: 28px 24px;
     }
-    .pillar-icon { font-size: 28px; margin-bottom: 14px; }
+    .pillar-num { font-size: 11px; font-weight: 800; letter-spacing: 0.14em; color: #CCFF00; margin-bottom: 10px; }
     .pillar-name {
       font-size: 15px; font-weight: 800;
-      color: var(--black);
+      color: #CCFF00;
       letter-spacing: var(--ls-normal);
       margin-bottom: 8px;
     }
     .pillar-desc {
-      font-size: 13px; color: var(--gray);
+      font-size: 13px; color: rgba(255,255,255,.7);
       line-height: 1.55; letter-spacing: var(--ls-normal);
     }
 
@@ -1656,14 +1648,17 @@
            07 — IMPACT SUMMARY
       ══════════════════════════════════════ -->
       <section id="impact" class="chapter reveal" style="padding-top:48px;">
+
         <div class="ch-eyebrow">
           <span class="ch-num">07</span>
           <span class="ch-tag">Impact</span>
         </div>
-        <h2 class="ch-title">The full<br><em>picture.</em></h2>
-        <p class="ch-lead">
-          Three years of building, testing, iterating, and shipping. Not just running campaigns — I engineered a complete digital growth system from the ground up.
-        </p>
+        <div class="ch-header-2col">
+          <h2 class="ch-title">The full<br><em>picture.</em></h2>
+          <p class="ch-lead" style="max-width:none;">
+            Three years of building, testing, iterating, and shipping. Not just running campaigns — I engineered a complete digital growth system from the ground up.
+          </p>
+        </div>
 
         <div class="impact-hero reveal">
           <div class="impact-title">
@@ -1677,68 +1672,52 @@
 
         <div class="pillars-grid reveal">
           <div class="pillar-card">
-            <div class="pillar-icon">📱</div>
+            <div class="pillar-num">01</div>
             <div class="pillar-name">5 Channels Managed</div>
             <div class="pillar-desc">TikTok, Instagram, Facebook, YouTube, LinkedIn — all coordinated, all with defined roles in the funnel.</div>
           </div>
           <div class="pillar-card">
-            <div class="pillar-icon">🎯</div>
+            <div class="pillar-num">02</div>
             <div class="pillar-name">$3.87 Avg CPL</div>
             <div class="pillar-desc">1,478 leads generated for a $7,900+ product. Industry benchmark: $50–$200+. Every lead is tracked, scored, and followed up.</div>
           </div>
           <div class="pillar-card">
-            <div class="pillar-icon">🔍</div>
+            <div class="pillar-num">03</div>
             <div class="pillar-name">SEO From Zero</div>
             <div class="pillar-desc">Homepage position 37 → 15 in 6 months. Articles approaching homepage traffic in 3 months. Snaplock Wall page: 33× click growth.</div>
           </div>
           <div class="pillar-card">
-            <div class="pillar-icon">⚙️</div>
+            <div class="pillar-num">04</div>
             <div class="pillar-name">Custom CRM Built</div>
             <div class="pillar-desc">Replaced HubSpot ($800+/month). Lead scoring, pipeline tracking, and automated quote delivery — deployed in under 1 month.</div>
           </div>
           <div class="pillar-card">
-            <div class="pillar-icon">📊</div>
+            <div class="pillar-num">05</div>
             <div class="pillar-name">Content System Built</div>
             <div class="pillar-desc">12 categories, 5 pillars, 120+ ideas mapped. All content organised, captioned, and schedulable from one custom dashboard.</div>
           </div>
           <div class="pillar-card">
-            <div class="pillar-icon">🤖</div>
+            <div class="pillar-num">06</div>
             <div class="pillar-name">AI Automation (Next)</div>
             <div class="pillar-desc">n8n-based research automation and Remotion for programmatic video — infrastructure being built to scale content and ops without scaling headcount.</div>
           </div>
         </div>
 
-        <div class="content-cols reveal">
-          <div>
-            <div class="block-title">What This Represents</div>
-            <p class="block-body">
-              This is not a portfolio of campaigns. It's a case study in how I built a <strong>digital growth system</strong> — the strategy, the execution, the data layer, and the tools that hold it all together.
-              <br><br>
-              The skills I applied: content strategy, paid media, SEO, landing page optimization, full-stack development, product thinking, data analysis. Each skill informs the others. That's what makes it a system and not a collection of tactics.
-            </p>
+        <!-- CTA -->
+        <div class="reveal" style="margin-top:48px; background:#0d0d0d; border-radius:24px; padding:56px 56px; display:flex; align-items:center; justify-content:space-between; gap:32px; flex-wrap:wrap;">
+          <div style="flex:1; min-width:280px;">
+            <div style="font-size:11px; font-weight:800; letter-spacing:0.14em; text-transform:uppercase; color:#CCFF00; margin-bottom:14px;">Let's Work Together</div>
+            <div style="font-size:clamp(22px,2.8vw,38px); font-weight:900; color:#ffffff; letter-spacing:var(--ls-tight); line-height:1.1; max-width:520px;">Ready to build your one marketing system with AI automation?</div>
           </div>
-          <div>
-            <div class="block-title">Still In Progress</div>
-            <p class="block-body">
-              My engagement with Supersub is ongoing. My next priorities: unified analytics inside the Content Dashboard, DM automation for lead follow-up, deeper n8n automation for competitor research and content ideation, and conversion rate optimization on the article CTA gap I identified in the SEO audit.
-              <br><br>
-              A system is never finished — it's iterated. That's the point.
-            </p>
+          <div style="display:flex; flex-direction:column; align-items:flex-end; gap:16px; flex-shrink:0;">
+            <a href="mailto:andy@supersub.co.nz" style="display:inline-flex; align-items:center; gap:0; padding:10px 10px 10px 28px; background:#CCFF00; color:#0d0d0d; font-size:16px; font-weight:700; text-decoration:none; border-radius:100px; white-space:nowrap; letter-spacing:var(--ls-normal); transition:opacity .2s;" onmouseover="this.style.opacity='.82'" onmouseout="this.style.opacity='1'">
+              Let's Talk
+              <span style="width:40px;height:40px;background:#0d0d0d;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-left:12px;">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#CCFF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h8M9 5l3 3-3 3"/></svg>
+              </span>
+            </a>
+            <a href="index.html" style="font-size:13px; color:rgba(255,255,255,.4); text-decoration:none; letter-spacing:var(--ls-normal); transition:color .2s;" onmouseover="this.style.color='rgba(255,255,255,.8)'" onmouseout="this.style.color='rgba(255,255,255,.4)'">← Back to Portfolio</a>
           </div>
-        </div>
-
-        <!-- Back to portfolio -->
-        <div style="margin-top: 64px; padding-top: 48px; border-top: 1px solid var(--line); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:24px;">
-          <div>
-            <div style="font-size:13px;color:var(--lgray);letter-spacing:var(--ls-normal);margin-bottom:6px;">Ready to work together?</div>
-            <div style="font-size:20px;font-weight:800;letter-spacing:var(--ls-tight);color:var(--black);">Let's build something that actually works.</div>
-          </div>
-          <a href="index.html" style="display:inline-flex;align-items:center;gap:12px;padding:12px 12px 12px 28px;background:var(--black);color:var(--white);font-size:15px;font-weight:600;text-decoration:none;border-radius:100px;letter-spacing:var(--ls-normal);transition:background .2s,transform .15s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='var(--black)'">
-            Back to Portfolio
-            <span style="width:36px;height:36px;background:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#0d0d0d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h8M9 5l3 3-3 3"/></svg>
-            </span>
-          </a>
         </div>
 
       </section>
