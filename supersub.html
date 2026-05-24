@@ -750,66 +750,84 @@
     }
 
     /* ─────────────────────────────────────────────
-       SECTION: OVERVIEW HERO
+       HERO — pepsodent-style
     ───────────────────────────────────────────── */
     #overview {
-      background: #222222;
-      padding: 0;
-      border-bottom: none;
-      min-height: 500px;
-      position: relative;
-      overflow: hidden;
+      padding: 0; border-bottom: none;
+      background: #111;
     }
-    .overview-inner {
-      padding: 80px 72px;
-      position: relative; z-index: 2;
+    .hero-ss {
+      position: relative; height: 520px; overflow: hidden;
+      background: #111;
     }
-    #overview::before {
+    .hero-ss-img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; filter: brightness(.3) saturate(.6);
+    }
+    .hero-ss-inner {
+      position: relative; z-index: 2; height: 100%;
+      display: flex; flex-direction: column;
+      justify-content: flex-end; padding: 56px 72px;
+    }
+    .hero-ss-back {
+      position: absolute; top: 36px; left: 72px;
+      display: flex; align-items: center; gap: 8px;
+      font-size: 14px; font-weight: 500; letter-spacing: var(--ls-normal);
+      color: rgba(255,255,255,.5); text-decoration: none; transition: color .2s;
+    }
+    .hero-ss-back:hover { color: var(--white); }
+    .hero-ss-chips { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; }
+    .hero-ss-chip {
+      padding: 5px 14px; border: 1px solid rgba(255,255,255,.2);
+      background: rgba(255,255,255,.08); backdrop-filter: blur(8px);
+      border-radius: 100px; font-size: 11px; font-weight: 600;
+      letter-spacing: .08em; color: rgba(255,255,255,.8); text-transform: uppercase;
+    }
+    .hero-ss-title {
+      font-size: clamp(48px, 6vw, 88px); font-weight: 900;
+      letter-spacing: var(--ls-tight); line-height: 0.9; color: var(--white);
+    }
+    .hero-ss-title .lime { color: #CCFF00; }
+    .hero-ss-title .red  { color: var(--red); }
+
+    /* ─────────────────────────────────────────────
+       STATS MARQUEE
+    ───────────────────────────────────────────── */
+    .stats-bar-ss { background: #222; overflow: hidden; padding: 36px 0; }
+    .stats-inner-ss {
+      display: flex; align-items: center; gap: 48px;
+      width: max-content; animation: marquee-ss 30s linear infinite;
+    }
+    .stats-inner-ss:hover { animation-play-state: paused; }
+    @keyframes marquee-ss { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .ss-bullet { width: 16px; height: 16px; border-radius: 50%; background: #CCFF00; flex-shrink: 0; }
+    .ss-item { display: flex; align-items: baseline; gap: 8px; white-space: nowrap; }
+    .ss-n { font-weight: 700; font-size: 30px; letter-spacing: var(--ls-tight); color: #CCFF00; }
+    .ss-l { font-weight: 300; font-size: 30px; letter-spacing: var(--ls-tight); color: #fff; }
+
+    /* ─────────────────────────────────────────────
+       OVERVIEW BODY (subtitle + tags)
+    ───────────────────────────────────────────── */
+    .overview-body {
+      background: #1a1a1a; padding: 48px 72px 56px;
+      position: relative; overflow: hidden;
+    }
+    .overview-body::before {
       content: 'SUPERSUB';
-      position: absolute;
-      right: -20px; bottom: -40px;
+      position: absolute; right: -20px; bottom: -40px;
       font-size: 240px; font-weight: 900;
       letter-spacing: var(--ls-tight);
       color: rgba(255,255,255,.04);
       line-height: 1; pointer-events: none;
     }
-    .overview-eyebrow {
-      display: flex; align-items: center; gap: 12px;
-      margin-bottom: 32px;
-    }
-    .overview-pill {
-      padding: 5px 14px;
-      border: 1px solid rgba(255,255,255,.2);
-      border-radius: 100px;
-      font-size: 12px; font-weight: 600;
-      color: rgba(255,255,255,.7);
-      letter-spacing: 0.04em;
-    }
-    .overview-year {
-      font-size: 12px; font-weight: 500;
-      color: rgba(255,255,255,.4);
-      letter-spacing: 0.04em;
-    }
-    .overview-title {
-      font-size: clamp(40px, 5.5vw, 80px);
-      font-weight: 900;
-      color: var(--white);
-      letter-spacing: var(--ls-tight);
-      line-height: 0.95;
-      margin-bottom: 28px;
-    }
-    .overview-title .red { color: var(--red); }
     .overview-subtitle {
-      font-size: clamp(16px, 1.6vw, 20px);
-      font-weight: 400;
-      color: rgba(255,255,255,.55);
-      line-height: 1.65;
-      max-width: 600px;
-      letter-spacing: var(--ls-normal);
-      margin-bottom: 56px;
+      font-size: clamp(16px, 1.6vw, 20px); font-weight: 400;
+      color: rgba(255,255,255,.55); line-height: 1.65;
+      max-width: 600px; letter-spacing: var(--ls-normal);
+      margin-bottom: 32px; position: relative;
     }
     .overview-subtitle strong { color: rgba(255,255,255,.85); font-weight: 600; }
-    .overview-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+    .overview-tags { display: flex; flex-wrap: wrap; gap: 10px; position: relative; }
     .overview-tag {
       padding: 6px 16px;
       background: rgba(255,255,255,.07);
@@ -818,31 +836,6 @@
       font-size: 13px; font-weight: 500;
       color: rgba(255,255,255,.65);
       letter-spacing: var(--ls-normal);
-    }
-    .overview-stats-bar {
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      border-top: 1px solid rgba(255,255,255,.08);
-      margin-top: 56px;
-    }
-    .ov-stat {
-      padding: 32px 28px;
-      border-right: 1px solid rgba(255,255,255,.08);
-    }
-    .ov-stat:last-child { border-right: none; }
-    .ov-stat-val {
-      font-size: clamp(28px, 3vw, 42px);
-      font-weight: 900;
-      color: var(--white);
-      letter-spacing: var(--ls-tight);
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-    .ov-stat-val .accent { color: #CCFF00; }
-    .ov-stat-val .red { color: var(--red); }
-    .ov-stat-lbl {
-      font-size: 11px; font-weight: 500;
-      color: rgba(255,255,255,.4);
-      letter-spacing: 0.04em;
     }
 
     /* ─────────────────────────────────────────────
@@ -955,16 +948,50 @@
       <!-- ══════════════════════════════════════
            01 — OVERVIEW
       ══════════════════════════════════════ -->
-      <section id="overview" class="chapter">
-        <div class="overview-inner">
-          <div class="overview-eyebrow">
-            <span class="overview-pill">Case Study</span>
-            <span class="overview-year">2023 – Present</span>
+      <section id="overview">
+
+        <!-- HERO -->
+        <div class="hero-ss">
+          <img src="supersub-bg.jpeg" alt="Supersub NZ" class="hero-ss-img" />
+          <div class="hero-ss-inner">
+            <a href="index.html" class="hero-ss-back">
+              <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 2L4 7l5 5"/></svg>
+              All Projects
+            </a>
+            <div class="hero-ss-chips">
+              <div class="hero-ss-chip">Case Study</div>
+              <div class="hero-ss-chip">2023 – Present</div>
+              <div class="hero-ss-chip">Social Media · Paid Ads · SEO</div>
+              <div class="hero-ss-chip">CRM · AI Automation · NZ</div>
+            </div>
+            <h1 class="hero-ss-title">
+              Supersub<span class="red">.</span><br>
+              <span class="lime">From Campaigns<br>to Complete System.</span>
+            </h1>
           </div>
-          <h1 class="overview-title">
-            Supersub<span class="red">.</span><br>
-            From Campaigns<br>to Complete System.
-          </h1>
+        </div>
+
+        <!-- STATS MARQUEE -->
+        <div class="stats-bar-ss">
+          <div class="stats-inner-ss">
+            <div class="ss-bullet"></div><div class="ss-item"><span class="ss-n">292K</span><span class="ss-l">TikTok Views</span></div>
+            <div class="ss-bullet"></div><div class="ss-item"><span class="ss-n">1,478</span><span class="ss-l">Leads via Paid Ads</span></div>
+            <div class="ss-bullet"></div><div class="ss-item"><span class="ss-n">$3.87</span><span class="ss-l">Avg. CPL (NZD)</span></div>
+            <div class="ss-bullet"></div><div class="ss-item"><span class="ss-n">~3 yrs</span><span class="ss-l">Ongoing Engagement</span></div>
+            <div class="ss-bullet"></div><div class="ss-item"><span class="ss-n">5</span><span class="ss-l">Channels Managed</span></div>
+            <div class="ss-bullet"></div><div class="ss-item"><span class="ss-n">2</span><span class="ss-l">Dashboards Built</span></div>
+            <!-- duplicate for seamless loop -->
+            <div class="ss-bullet"></div><div class="ss-item"><span class="ss-n">292K</span><span class="ss-l">TikTok Views</span></div>
+            <div class="ss-bullet"></div><div class="ss-item"><span class="ss-n">1,478</span><span class="ss-l">Leads via Paid Ads</span></div>
+            <div class="ss-bullet"></div><div class="ss-item"><span class="ss-n">$3.87</span><span class="ss-l">Avg. CPL (NZD)</span></div>
+            <div class="ss-bullet"></div><div class="ss-item"><span class="ss-n">~3 yrs</span><span class="ss-l">Ongoing Engagement</span></div>
+            <div class="ss-bullet"></div><div class="ss-item"><span class="ss-n">5</span><span class="ss-l">Channels Managed</span></div>
+            <div class="ss-bullet"></div><div class="ss-item"><span class="ss-n">2</span><span class="ss-l">Dashboards Built</span></div>
+          </div>
+        </div>
+
+        <!-- OVERVIEW BODY: subtitle + tags -->
+        <div class="overview-body">
           <p class="overview-subtitle">
             Most brands hire a social media manager. A paid ads specialist. An SEO consultant. A developer.
             <strong>Supersub gets all four — plus the infrastructure that connects them.</strong>
@@ -978,25 +1005,8 @@
             <span class="overview-tag">AI Automation (n8n)</span>
             <span class="overview-tag">Landing Page Optimization</span>
           </div>
-          <div class="overview-stats-bar">
-            <div class="ov-stat">
-              <div class="ov-stat-val">292<span style="font-size:.6em;opacity:.5">K</span></div>
-              <div class="ov-stat-lbl">TikTok Views</div>
-            </div>
-            <div class="ov-stat">
-              <div class="ov-stat-val">1,478</div>
-              <div class="ov-stat-lbl">Leads via Paid Ads</div>
-            </div>
-            <div class="ov-stat">
-              <div class="ov-stat-val red">$3.87</div>
-              <div class="ov-stat-lbl">Avg. CPL (NZD)</div>
-            </div>
-            <div class="ov-stat">
-              <div class="ov-stat-val accent">~3 yrs</div>
-              <div class="ov-stat-lbl">Ongoing Engagement</div>
-            </div>
-          </div>
         </div>
+
       </section>
 
       <!-- ══════════════════════════════════════
