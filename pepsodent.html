@@ -256,22 +256,37 @@
     .cta-banner {
       background: var(--black); border-radius: 24px;
       padding: 56px; position: relative; overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
     }
     .cta-banner::before {
       content: 'PEPSODENT'; position: absolute; right: -10px; bottom: -30px;
       font-size: 120px; font-weight: 900; letter-spacing: var(--ls-tight);
       color: rgba(255,255,255,.04); line-height: 1; pointer-events: none;
     }
+    .cta-left {}
+    .cta-right {}
     .cta-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.3); margin-bottom: 16px; }
-    .cta-title { font-size: clamp(32px,4vw,56px); font-weight: 900; letter-spacing: var(--ls-tight); line-height: 0.93; color: var(--white); margin-bottom: 16px; }
+    .cta-title { font-size: clamp(32px,4vw,56px); font-weight: 900; letter-spacing: var(--ls-tight); line-height: 0.93; color: var(--white); margin-bottom: 0; }
     .cta-title span { color: #CCFF00; }
-    .cta-desc { font-size: 16px; color: rgba(255,255,255,.5); line-height: 1.65; letter-spacing: var(--ls-normal); max-width: 520px; margin-bottom: 32px; }
+    .cta-desc { font-size: 16px; color: rgba(255,255,255,.5); line-height: 1.65; letter-spacing: var(--ls-normal); margin-bottom: 32px; }
     .cta-specs { display: flex; flex-wrap: wrap; gap: 8px; }
     .cta-spec {
       padding: 6px 16px; background: rgba(255,255,255,.08);
       border: 1px solid rgba(255,255,255,.15); border-radius: 100px;
       font-size: 12px; font-weight: 600; letter-spacing: .04em; color: rgba(255,255,255,.75);
     }
+
+    .cta-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .cta-left {}
+    .cta-right {}
 
     /* ── Reveal ── */
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
@@ -286,7 +301,8 @@
       .hero-back { left: 24px; }
       .stat-row-4 { grid-template-columns: 1fr 1fr; }
       .deck-pair { grid-template-columns: 1fr; }
-      .cta-banner { padding: 36px 28px; }
+      .cta-banner { padding: 36px 28px; grid-template-columns: 1fr; gap: 28px; }
+      #contact { grid-template-columns: 1fr !important; padding: 56px 24px !important; gap: 48px !important; }
       .cur-dot, .cur-ring { display: none; }
       body { cursor: auto; }
     }
@@ -367,7 +383,7 @@
     </div>
     <h2 class="section-title">Creative Campaign Decks<br>for <em class="red">Pepsodent</em></h2>
     <p class="section-lead">
-      Pepsodent — brand di bawah <strong>Unilever</strong> — membutuhkan dua creative deck untuk dua produk berbeda: <strong>4D Expert Clean</strong> (sikat gigi, 15 detik) dan <strong>Gum Expert</strong> (pasta gigi, 30 detik). Di Overlay Studio Limited, aku handle seluruh pre-production kreatif — dari script writing, research referensi visual, kurasi moodboard, sampai desain PPT deck yang siap dipresentasikan ke klien dan tim produksi.
+      Pepsodent — a brand under <strong>Unilever</strong> — needed two creative decks for two different products: <strong>4D Expert Clean</strong> (toothbrush, 15 seconds) and <strong>Gum Expert</strong> (toothpaste, 30 seconds). At Overlay Studio Limited, I handled the full creative pre-production — from script writing and visual reference research to moodboard curation and PPT deck design, ready to present to the client and production crew.
     </p>
 
     <div class="stat-row stat-row-4">
@@ -402,7 +418,7 @@
     </div>
     <h2 class="section-title">My <em>Contribution</em></h2>
     <p class="section-lead">
-      Full pre-production kreatif untuk dua campaign sekaligus — dari nulis script sampai deck siap dipakai di hari produksi.
+      Full creative pre-production for two campaigns simultaneously — from writing the script to delivering a deck ready for shoot day.
     </p>
 
     <div class="role-list">
@@ -410,42 +426,42 @@
         <div class="role-icon">✍️</div>
         <div>
           <div class="role-title">Script Writing</div>
-          <div class="role-desc">Menulis creative script untuk dua video — <strong>15 detik (4D Expert Clean)</strong> dan <strong>30 detik (Gum Expert)</strong> — scene-by-scene, voice over script, dan storyline behind the scene content yang aligned ke key message masing-masing produk.</div>
+          <div class="role-desc">Wrote creative scripts for both videos — <strong>15 seconds (4D Expert Clean)</strong> and <strong>30 seconds (Gum Expert)</strong> — scene-by-scene, voice over scripts, and behind-the-scene content storylines aligned to each product's key messages.</div>
         </div>
       </div>
       <div class="role-row">
         <div class="role-icon">🔍</div>
         <div>
           <div class="role-title">Reference Research</div>
-          <div class="role-desc">Research referensi visual dari <strong>YouTube, TikTok, Instagram, dan Pinterest</strong> — fokus ke product cinematography, oral care advertising, lab setup aesthetics, dan talent expression untuk tiap tone (fun/casual vs elegant/clean).</div>
+          <div class="role-desc">Sourced visual references from <strong>YouTube, TikTok, Instagram, and Pinterest</strong> — focused on product cinematography, oral care advertising, lab setup aesthetics, and talent expressions for each campaign tone (fun/casual vs elegant/clean).</div>
         </div>
       </div>
       <div class="role-row">
         <div class="role-icon">🗂️</div>
         <div>
-          <div class="role-title">Curation di Eagle</div>
-          <div class="role-desc">Kumpulkan dan tag semua referensi di <strong>Eagle</strong> berdasarkan scene, produk, dan tipe shot — jadi library visual terstruktur yang bisa diakses tim produksi dan direktur kapan saja.</div>
+          <div class="role-title">Curation in Eagle</div>
+          <div class="role-desc">Collected and tagged all references in <strong>Eagle</strong> by scene, product, and shot type — building a structured visual library the production team and director could access anytime.</div>
         </div>
       </div>
       <div class="role-row">
         <div class="role-icon">🎬</div>
         <div>
           <div class="role-title">Storyboard & Moodboard</div>
-          <div class="role-desc">Susun storyboard per scene — shot type, focal length, movement, props, background, dan talent direction — plus moodboard visual untuk setiap scene sesuai urutan script.</div>
+          <div class="role-desc">Built storyboards per scene — shot type, focal length, movement, props, background, and talent direction — plus visual moodboard for each scene in script order.</div>
         </div>
       </div>
       <div class="role-row">
         <div class="role-icon">👗</div>
         <div>
           <div class="role-title">Talent, Wardrobe & Location Direction</div>
-          <div class="role-desc">Tentukan referensi <strong>talent, wardrobe, makeup, hairdo</strong>, dan <strong>shoot location</strong> untuk masing-masing campaign — 4D Expert di Villa Arendelle Casares, Gum Expert dengan laboratorium setup profesional.</div>
+          <div class="role-desc">Defined references for <strong>talent, wardrobe, makeup, and hairdo</strong>, plus the <strong>shoot location</strong> for each campaign — 4D Expert at Villa Arendelle Casares, Gum Expert with a professional laboratory setup.</div>
         </div>
       </div>
       <div class="role-row">
         <div class="role-icon">🎨</div>
         <div>
-          <div class="role-title">Desain Deck PPT</div>
-          <div class="role-desc">Desain dua Creative Deck di PowerPoint yang <strong>visual, on-brand</strong>, dan terasa polished waktu dipresentasikan langsung ke Pepsodent — mencakup creative brief, key messages, voice over script, storyboard, dan moodboard references.</div>
+          <div class="role-title">PPT Deck Design</div>
+          <div class="role-desc">Designed two Creative Decks in PowerPoint that are <strong>visual, on-brand</strong>, and polished enough to present directly to Pepsodent — covering creative brief, key messages, voice over script, storyboard, and moodboard references.</div>
         </div>
       </div>
     </div>
@@ -458,7 +474,7 @@
       <span class="eyebrow-tag">Result</span>
     </div>
     <h2 class="section-title" style="margin-bottom:12px;">Two Decks,<br><em class="red">One Standard</em></h2>
-    <p class="section-lead">Dua campaign deck dengan pendekatan berbeda — tapi sama-sama dieksekusi sampai klien approve dan produksi jalan.</p>
+    <p class="section-lead">Two campaign decks with different approaches — both executed until the client approved and production rolled.</p>
 
     <!-- Two deck boxes side by side -->
     <div class="deck-pair">
@@ -504,25 +520,92 @@
     </div>
 
     <div class="cta-banner">
-      <div class="cta-eyebrow">Final Output</div>
-      <div class="cta-title">Creative Deck<br><span>& Moodboard</span></div>
-      <div class="cta-desc">
-        Dua deck diapprove dan langsung dipakai di hari produksi masing-masing campaign. Semua shot, talent, dan setup dieksekusi sesuai moodboard — direktur dan tim brand sudah aligned sebelum kamera nyala.
+      <div class="cta-left">
+        <div class="cta-eyebrow">Final Output</div>
+        <div class="cta-title">Creative Deck<br><span>& Moodboard</span></div>
       </div>
-      <div class="cta-specs">
-        <div class="cta-spec">15s Vertical (4D Expert)</div>
-        <div class="cta-spec">30s Vertical (Gum Expert)</div>
-        <div class="cta-spec">Script Writing</div>
-        <div class="cta-spec">Storyboard</div>
-        <div class="cta-spec">Moodboard</div>
-        <div class="cta-spec">PPT Deck Design</div>
-        <div class="cta-spec">Eagle Curation</div>
-        <div class="cta-spec">Overlay Studio 2024</div>
+      <div class="cta-right">
+        <div class="cta-desc">
+          Both decks were approved and used directly on each campaign's production day. Every shot, talent direction, and setup was executed according to the moodboard — the director and brand team were fully aligned before the camera rolled.
+        </div>
+        <div class="cta-specs">
+          <div class="cta-spec">15s Vertical (4D Expert)</div>
+          <div class="cta-spec">30s Vertical (Gum Expert)</div>
+          <div class="cta-spec">Script Writing</div>
+          <div class="cta-spec">Storyboard</div>
+          <div class="cta-spec">Moodboard</div>
+          <div class="cta-spec">PPT Deck Design</div>
+          <div class="cta-spec">Eagle Curation</div>
+          <div class="cta-spec">Overlay Studio 2024</div>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- ══ CONTACT ══ -->
+  <section id="contact" style="padding:100px 52px;border-top:1px solid var(--line);background:#0d0d0d;color:#fff;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+
+    <div style="display:flex;flex-direction:column;align-items:flex-start;text-align:left;">
+      <div style="font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#555;margin-bottom:32px;">Let's Work Together</div>
+      <h2 style="font-family:'Inter',sans-serif;font-size:60px;font-weight:500;letter-spacing:-0.09em;line-height:1.1;color:#fff;margin-bottom:48px;">
+        Ready to build your<br>one marketing system<br>with AI automation?<br><span style="color:#CCFF00;">Let's talk!</span>
+      </h2>
+      <a href="mailto:haafizhdfw13@gmail.com" style="display:inline-block;font-size:18px;font-weight:500;letter-spacing:-0.03em;color:#fff;text-decoration:none;border-bottom:1px solid #333;padding-bottom:4px;margin-bottom:40px;transition:border-color .2s;">haafizhdfw13@gmail.com</a>
+      <div style="display:flex;gap:24px;flex-wrap:wrap;">
+        <a href="https://www.instagram.com/haafizhdfw/" target="_blank" style="font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#444;text-decoration:none;">Instagram</a>
+        <a href="#" target="_blank" style="font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#444;text-decoration:none;">Behance</a>
+        <a href="https://www.linkedin.com/in/haafizhdfw/" target="_blank" style="font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#444;text-decoration:none;">LinkedIn</a>
+        <a href="https://www.tiktok.com/@haafizhdfw" target="_blank" style="font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#444;text-decoration:none;">TikTok</a>
+      </div>
+    </div>
+
+    <div>
+      <form style="display:flex;flex-direction:column;gap:14px;" onsubmit="handleFormSubmit(event)">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+          <input type="text" placeholder="Full Name" required style="width:100%;background:#fff;border:none;border-radius:100px;padding:16px 24px;font-family:'Inter',sans-serif;font-size:16px;color:#0d0d0d;outline:none;" />
+          <input type="email" placeholder="Email Address" required style="width:100%;background:#fff;border:none;border-radius:100px;padding:16px 24px;font-family:'Inter',sans-serif;font-size:16px;color:#0d0d0d;outline:none;" />
+        </div>
+        <input type="text" placeholder="Business / Brand Name" style="width:100%;background:#fff;border:none;border-radius:100px;padding:16px 24px;font-family:'Inter',sans-serif;font-size:16px;color:#0d0d0d;outline:none;" />
+        <select id="contactService" onchange="this.style.color='#0d0d0d'" style="width:100%;background:#fff;border:none;border-radius:100px;padding:16px 24px;font-family:'Inter',sans-serif;font-size:16px;color:#aaa;outline:none;-webkit-appearance:none;">
+          <option value="" disabled selected>What do you need?</option>
+          <option>Social Media Management</option>
+          <option>Paid Ads (Meta / Google)</option>
+          <option>SEO & Landing Page Optimization</option>
+          <option>CRM & AI Automation</option>
+          <option>Full-Stack Marketing System</option>
+          <option>Other</option>
+        </select>
+        <textarea placeholder="Tell me about your project..." style="width:100%;background:#fff;border:none;border-radius:20px;padding:16px 24px;font-family:'Inter',sans-serif;font-size:16px;color:#0d0d0d;outline:none;resize:none;height:110px;line-height:1.6;"></textarea>
+        <button type="submit" id="pepsContactBtn" style="display:inline-flex;align-items:center;gap:0;padding:14px 14px 14px 28px;background:#CCFF00;color:#0d0d0d;font-family:'Inter',sans-serif;font-size:18px;font-weight:700;letter-spacing:-0.01em;border:none;border-radius:100px;cursor:pointer;width:fit-content;transition:background .2s,transform .15s;">
+          Let's Build
+          <span style="display:flex;align-items:center;justify-content:center;width:38px;height:38px;background:#0d0d0d;border-radius:50%;margin-left:16px;flex-shrink:0;transition:transform .2s;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#CCFF00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </span>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer style="background:#0d0d0d;padding:24px 52px;border-top:1px solid #1a1a1a;display:flex;justify-content:space-between;align-items:center;">
+    <a href="index.html"><img src="logo-portfolio.svg" alt="hd." style="height:32px;opacity:.3;filter:invert(1);" /></a>
+    <p style="font-size:12px;color:#444;">© 2026 Davian Harris — Digital Marketing Systems Builder</p>
+    <p style="font-size:12px;color:#444;">Indonesia</p>
+  </footer>
+
   <script>
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('pepsContactBtn');
+      btn.textContent = 'Sent! ✓';
+      btn.style.background = '#00ff88';
+      setTimeout(() => {
+        btn.innerHTML = 'Let\'s Build <span style="display:flex;align-items:center;justify-content:center;width:38px;height:38px;background:#0d0d0d;border-radius:50%;margin-left:16px;"><svg viewBox="0 0 24 24" fill="none" stroke="#CCFF00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>';
+        btn.style.background = '#CCFF00';
+        e.target.reset();
+        document.getElementById('contactService').style.color = '#aaa';
+      }, 3000);
+    }
     const dot = document.getElementById('curDot');
     const ring = document.getElementById('curRing');
     let mx=0,my=0,rx=0,ry=0;
